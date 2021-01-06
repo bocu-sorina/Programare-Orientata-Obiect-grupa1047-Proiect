@@ -1,11 +1,11 @@
 #pragma once
 #include<iostream>
-#include"Produse.h"
+#include"Produs.h"
 using namespace std;
 
 
 class Tablete :
-    public Produse
+    public Produs
 {
 
     float* dim;
@@ -14,10 +14,10 @@ class Tablete :
 
     Tablete();
 
-    Tablete(int cod_pr, float pret, const char* den_pr, int cantitate,int inch,float * dim) :Produse(cod_pr, pret, den_pr, cantitate);
+    Tablete(int cod_pr, float pret, const char* den_pr, int cantitate,int inch,float * dim);
 
 
-    Tablete(const Tablete& t) : Produse(p);
+    Tablete(const Tablete& t) ;
 
     Tablete& operator=(Tablete& t);
 
@@ -26,9 +26,9 @@ class Tablete :
 
     void setDimensiuni(float* dim, int inch);
     friend ostream& operator <<(ostream& out, Tablete t);
-    friend istream& operator>>(istream& ios, Tablete& t);
+   // friend istream& operator>>(istream& ios, Tablete& t);
 
-    Tablete& operator[](int index);
+   // Tablete& operator[](int index);
    
 
 };

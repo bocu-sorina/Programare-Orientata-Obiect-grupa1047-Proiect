@@ -1,15 +1,16 @@
 #include "Electrocasnice.h"
 
-Electrocasnice::Electrocasnice()
+Electrocasnice::Electrocasnice() :Produs(cod_pr, pret, den_pr, cantitate)
 {
+	this->kW = 0;
 }
 
-Electrocasnice::Electrocasnice(int cod_pr, float pret, const char* den_pr, int cantitate, float kW)
+Electrocasnice::Electrocasnice(int cod_pr, float pret, const char* den_pr, int cantitate, float kW) : Produs(cod_pr, pret, den_pr, cantitate)
 {
 	this->kW = kW;
 }
 
-Electrocasnice::Electrocasnice(const Electrocasnice& e)
+Electrocasnice::Electrocasnice(const Electrocasnice& e) : Produs(e)
 {
 	this->kW = e.kW;
 }
@@ -18,7 +19,7 @@ Electrocasnice& Electrocasnice::operator=(Electrocasnice& e)
 {
 	if (this != &e)
 	{
-		Produse::operator=(p);
+		Produs::operator=(e);
 		this->kW = e.kW;
 	}
 	return *this;
@@ -28,18 +29,18 @@ Electrocasnice::~Electrocasnice()
 {
 }
 
-ostream& operator<<(ostream& out, Electrocasnice e)
+ostream& operator<<(ostream& iesire, Electrocasnice e)
 {
-	out << "Electrocasnicul: ";
-	out << (Produse)e;
-	out << "Are consumul electric: " << e.kW;
-	return out;
+	iesire << "Electrocasnicul: ";
+	iesire << (Produs) e;
+	iesire << "Are consumul electric: " << e.kW;
+	return iesire;
 }
 
-istream& operator>>(istream& ios, Electrocasnice& e)
-{
-	ios >> (Produse)e;
-	cout << "Consumul electric: ";
-	ios >> e.kW;
-	return ios;
-}
+//istream& operator>>(istream& ios, Electrocasnice& e)
+//{
+//	ios >> (Produs)e;
+//	cout << "Consumul electric: ";
+//	ios >> e.kW;
+//	return ios;
+//}

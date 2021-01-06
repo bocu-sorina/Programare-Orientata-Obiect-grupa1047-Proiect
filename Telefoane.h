@@ -1,11 +1,12 @@
 #pragma once
 #include<iostream>
-#include "Produse.h"
+#include "Produs.h"
+#include<string>
 using namespace std;
  
 
 class Telefoane :
-    public Produse
+    public Produs
 {
     char* so_t;
     int camera;
@@ -16,10 +17,9 @@ public:
 
     Telefoane();
 
-    Telefoane(int cod_pr, float pret, const char* den_pr, int cantitate, const char* so_t,int camera,string sticla,
-        const char* procesor, int mem_t) :Produse(cod_pr, pret, den_pr, cantitate);
+    Telefoane(int cod_pr, float pret, const char* den_pr, int cantitate, const char* so_t,int camera,string sticla,const char* procesor, int mem_t) ;
     
-    Telefoane(const Telefoane& tl) :Produse(p);
+    Telefoane(const Telefoane& tl);
 
     Telefoane& operator= (Telefoane& tl) ;
 
@@ -31,6 +31,6 @@ public:
     void setCamera(int camera);
     
     friend ostream& operator <<(ostream& out, Telefoane tl);
-    friend istream& operator>>(istream& ios, Telefoane& tl);
+    //friend istream& operator>>(istream& ios, Telefoane& tl);
 };
 
