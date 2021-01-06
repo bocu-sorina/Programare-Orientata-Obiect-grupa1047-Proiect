@@ -1,5 +1,4 @@
 #pragma once
-#include<iostream>
 #include "Produs.h"
 
 using namespace std;

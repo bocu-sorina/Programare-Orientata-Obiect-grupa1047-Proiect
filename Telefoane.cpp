@@ -1,9 +1,9 @@
 #include "Telefoane.h"
 
-Telefoane::Telefoane():Produs(cod_pr, pret, den_pr, cantitate)
+Telefoane::Telefoane()
 {
-    this->so_t = new char[strlen("sistem de operare necunoscut") + 1];
-    strcpy_s(this->so_t, strlen("sistemde operare necunoscut") + 1, "sistem de operare necunoscut");
+    this->so_t = new char[strlen("SO necunoscut") + 1];
+    strcpy_s(this->so_t, strlen("SO necunoscut") + 1, "SO necunoscut");
     this->procesor = new char[strlen("procesor necunoscut") + 1];
     strcpy_s(this->procesor, strlen("procesor necunoscut") + 1, "procesor necunoscut");
     this->camera = 0;
@@ -114,8 +114,8 @@ ostream& operator<<(ostream& out, Telefoane tl)
 {
     out << "\t Telefonul:" << endl;
     out << (Produs)tl;
-    out << "Are sistemul de operare:" << tl.so_t << ",camera: "<<tl.camera<<", sticla"<<tl.sticla<<", procesorul:" << tl.procesor 
-        << "si capacitatea memoriei este:" << tl.mem_t;
+    out << "Are sistemul de operare:" << tl.so_t << ",camera: "<<tl.camera<<" MP"<<", sticla"<<tl.sticla<<", procesorul:" << tl.procesor 
+        << "si capacitatea memoriei este:" << tl.mem_t<<" GB"<<endl;
     return out;
 }
 

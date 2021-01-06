@@ -21,7 +21,7 @@ Tablete::Tablete (const Tablete& t) : Produs(t)
 		this->dim[i] = t.dim[i];
 }
 
-Tablete::Tablete():Produs(cod_pr, pret, den_pr, cantitate)
+Tablete::Tablete()
 {
 	
 }
@@ -50,10 +50,11 @@ Tablete::~Tablete()
 		delete[] this->dim;
 }
 
-float* Tablete::getDimensiune()
+int Tablete::getCod()
 {
-	return dim;
+	return cod_pr;
 }
+
 
 void Tablete::setDimensiuni(float* dim, int inch)
 {
@@ -72,17 +73,7 @@ void Tablete::setDimensiuni(float* dim, int inch)
 		throw new exception("Exceptie: dimensiunea sau inch nu sunt corecte.");
 }
 
-//Tablete& Tablete::operator[](int index)
-//{
-//	
-//	if (index > 0 && index < cantitate)
-//	{
-//		return this->dim[index];
-//	}
-//	else
-//		throw new exception("Eroare: indexul nu corespunde.");
-//	
-//}
+
 
 ostream& operator<<(ostream& out, Tablete t)
 {

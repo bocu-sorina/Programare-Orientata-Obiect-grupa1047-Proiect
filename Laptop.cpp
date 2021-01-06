@@ -1,10 +1,10 @@
 #include "Laptop.h"
 
-Laptop::Laptop():Produs(cod_pr, pret, den_pr, cantitate)
+Laptop::Laptop()
 
 {
-	this->so_l = new char[strlen("sistem de operare necunoscut") + 1];
-	strcpy_s(this->so_l, strlen("sistemde operare necunoscut") + 1, "sistem de operare necunoscut");
+	this->so_l = new char[strlen("SO necunoscut") + 1];
+	strcpy_s(this->so_l, strlen("SO necunoscut") + 1, "SO necunoscut");
 	this->procesor = new char[strlen("procesor necunoscut") + 1];
 	strcpy_s(this->procesor, strlen("procesor necunoscut") + 1, "procesor necunoscut");
 	this->mem_l = 0;
@@ -12,13 +12,13 @@ Laptop::Laptop():Produs(cod_pr, pret, den_pr, cantitate)
 
 
 
-Laptop::Laptop(int cod_pr, float pret, const char* den_pr, int cantitate, const char* so_l, const char* procesor, int memorie):Produs(cod_pr, pret, den_pr, cantitate)
+Laptop::Laptop(int cod_pr, float pret, const char* den_pr, int cantitate, const char* so_l, const char* procesor, int mem_l):Produs(cod_pr, pret, den_pr, cantitate)
 {
 	this->so_l = new char[strlen(so_l)+1];
 	strcpy_s(this->so_l, strlen(so_l) + 1, so_l);
 	this->procesor = new char[strlen(procesor) + 1];
 	strcpy_s(this->procesor, strlen(procesor) + 1, procesor);
-	this->mem_l = memorie;
+	this->mem_l = mem_l;
 }
 
 Laptop::Laptop(const Laptop& l) :Produs(l)
@@ -73,9 +73,38 @@ char* Laptop::getSistemOperareLaptop()
 	return so_l;
 }
 
+char* Laptop::getDenumireLaptop()
+{
+	return den_pr;
+}
+
+void Laptop::setCod(int cod_pr)
+{
+	this->cod_pr = cod_pr;
+
+}
+
+void Laptop::setPret(float pret)
+{
+	this->pret = pret;
+}
+
+void Laptop::setDenumire(char* den_pr)
+{
+	if (den_pr != nullptr) {
+		delete[] this->den_pr;
+		this->den_pr = new char[strlen(den_pr) + 1];
+		strcpy_s(this->den_pr, strlen(den_pr) + 1, den_pr);
+	}
+	else
+	{
+		throw new exception("Denumirea este nula.");
+	}
+}
+
 void Laptop::setSO(char* so_l)
 {
-	{
+
 		if (so_l != nullptr) {
 			delete[] this->so_l;
 			this->so_l = new char[strlen(so_l) + 1];
@@ -85,14 +114,32 @@ void Laptop::setSO(char* so_l)
 		{
 			throw new exception ("Sistemul de operare nu este unul valid");
 		}
+
+}
+
+void Laptop::setProcesor(char* procesor)
+{
+	if (procesor!= nullptr) {
+		delete[] this->procesor;
+		this->procesor = new char[strlen(procesor) + 1];
+		strcpy_s(this->procesor, strlen(procesor) + 1, procesor);
 	}
+	else
+	{
+		throw new exception("Procesorul nu a fost introdus.");
+	}
+}
+
+void Laptop::setMemorie(int mem_l)
+{
+	this->mem_l = mem_l;
 }
 
 ostream& operator<<(ostream& out, Laptop l)
 {
 	out << "\t Laptop:" << endl;
 	out << (Produs)l;
-	out << "Are sistemul de operare:" << l.so_l << ", preocesorul:" << l.procesor << "si capacitatea memoriei este:" << l.mem_l;
+	out << "Are sistemul de operare:" << l.so_l << ", preocesorul:" << l.procesor << " si capacitatea memoriei este:" << l.mem_l<<" GB.";
 	return out;
 }
 

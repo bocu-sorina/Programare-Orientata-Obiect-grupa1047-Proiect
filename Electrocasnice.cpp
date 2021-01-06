@@ -1,6 +1,6 @@
 #include "Electrocasnice.h"
 
-Electrocasnice::Electrocasnice() :Produs(cod_pr, pret, den_pr, cantitate)
+Electrocasnice::Electrocasnice() 
 {
 	this->kW = 0;
 }
@@ -33,7 +33,7 @@ ostream& operator<<(ostream& iesire, Electrocasnice e)
 {
 	iesire << "Electrocasnicul: ";
 	iesire << (Produs) e;
-	iesire << "Are consumul electric: " << e.kW;
+	iesire << "Are consumul electric: " << e.kW<<" W.";
 	return iesire;
 }
 

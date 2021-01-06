@@ -22,13 +22,13 @@ class Tablete :
     Tablete& operator=(Tablete& t);
 
     ~Tablete();
-    float* getDimensiune();
+    int getCod();
 
     void setDimensiuni(float* dim, int inch);
     friend ostream& operator <<(ostream& out, Tablete t);
    // friend istream& operator>>(istream& ios, Tablete& t);
 
-   // Tablete& operator[](int index);
+  
    
 
 };
