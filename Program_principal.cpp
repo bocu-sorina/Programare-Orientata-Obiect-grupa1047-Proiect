@@ -99,5 +99,86 @@ int main()
 	char so2[] = { "Android" };
 	tl1.setSOtelefon(so2);
 	cout << "tl1 dupa setteri:  " << tl1 << endl;
+	cout << "===============================POLIMORFISM=====================================================" << endl;
+	Produs* pp1 = new Produs(00001, 555.55, "Produs_1", 50);
+	Produs* pp2 = new Electrocasnice (00002, 1111.11, "Produs_2", 30,700.2);
+	Produs* pp3 = new Laptop (00003, 999.99, "Produs_3", 70,"Dos","AMD",8);
+	float tst[] = { 5.3,7.6,0.2,6.3 };
+	Produs* pp4 = new Tablete(00004, 333.33, "Produs_4", 30,3,tst);
 
+	Produs* pp5 = new Telefoane(00005, 222.22, "Produs_5", 20,"Android",12,"LCD","Samsung Exynos",32);
+	//pp1 = &p3;
+	//pp2 = &p4;
+	cout << "\nFolosind obiecte si pointeri la obiecte: ";
+	//p3.calculeazaPretDupaDiscount(3); 
+	//p4.calculeazaPretDupaDiscount(3); 
+
+	pp1->calculeazaPretDupaDiscount(3);
+	pp2->calculeazaPretDupaDiscount(3);
+	pp3->calculeazaPretDupaDiscount(3);
+	pp4->calculeazaPretDupaDiscount(3);
+	pp5->calculeazaPretDupaDiscount(3);
+
+	Electrocasnice* pel1,*pel2;	
+	pel1 = &e3;	
+	pel2 = &e4;
+	cout << "INAINTE:  " << e3 << endl;
+	e3.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << e3 << endl;
+	pel1->calculeazaPretDupaDiscount(3);
+	cout << "INAINTE:  " << e4 << endl;
+	e4.calculeazaPretDupaDiscount(3); 
+	cout << "DUPA:   " << e4 << endl;
+	pel2->calculeazaPretDupaDiscount(3);
+
+
+	Laptop * plp1,*plp2;
+	plp1 = &l3;
+	plp2 = &l4;
+	cout << "INAINTE:  " <<tl3 << endl;
+	l3.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << l3 << endl;
+	plp1->calculeazaPretDupaDiscount(3);
+	cout << "INAINTE:  " << l4 << endl;
+	l4.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << l4<< endl;
+	plp2->calculeazaPretDupaDiscount(3);
+
+	Tablete * ptb1,*ptb2; 
+	ptb1 = &t3;
+	ptb2 = &t4;	
+	cout << "INAINTE:  " << t3 << endl;
+	t3.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << t3 << endl;
+	ptb1->calculeazaPretDupaDiscount(3);
+	cout << "INAINTE:  " << t4<< endl;
+	t4.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << t4 << endl;
+	ptb2->calculeazaPretDupaDiscount(3);
+
+	Telefoane * ptlf1,*ptlf2;
+	ptlf1 = &tl3;
+	ptlf2 = &tl4;
+	cout << "INAINTE:  " << tl3 << endl;
+	tl3.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << tl3 << endl;
+	ptlf1->calculeazaPretDupaDiscount(3);
+	cout << "INAINTE:  " << tl4 << endl;
+	tl3.calculeazaPretDupaDiscount(3);
+	cout << "DUPA:   " << tl4 << endl;
+
+	ptlf2->calculeazaPretDupaDiscount(3);
+;
+
+
+
+
+	cout << "\nFolosind conversia in pointer la obiect de baza: " << endl;
+	pp1 = pel1; pp1->calculeazaPretDupaDiscount(3);
+	
+	pp1 = plp1; pp1->calculeazaPretDupaDiscount(3);
+	pp1 = ptb1;pp1->calculeazaPretDupaDiscount(3);
+	pp1 = ptlf1;pp1->calculeazaPretDupaDiscount(3);
+
+	
 }

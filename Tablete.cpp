@@ -73,6 +73,14 @@ void Tablete::setDimensiuni(float* dim, int inch)
 		throw new exception("Exceptie: dimensiunea sau inch nu sunt corecte.");
 }
 
+double Tablete::calculeazaPretDupaDiscount(double discount)
+{	
+	cout << "Discount din tablete" << endl;
+
+	pret -= pret * discount / 100 + 60;
+	return pret;
+}
+
 
 
 ostream& operator<<(ostream& out, Tablete t)

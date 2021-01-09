@@ -31,16 +31,7 @@ public:
     friend ostream& operator <<(ostream& out, Laptop l);
     //friend istream& operator>>(istream& ios, Laptop& l);
     
-    /*Laptop& operator[](int index)
-    {
-        if (index > 0 && index < cantitate)
-        {
-            return pret[index];
-        }
-        else
-            throw new exception("Eroare: indexul nu corespunde.");
-    }*/
-
+    double calculeazaPretDupaDiscount(double discount);
 
 
 

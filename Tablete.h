@@ -27,7 +27,7 @@ class Tablete :
     void setDimensiuni(float* dim, int inch);
     friend ostream& operator <<(ostream& out, Tablete t);
    // friend istream& operator>>(istream& ios, Tablete& t);
-
+    double calculeazaPretDupaDiscount(double discount);
   
    
 

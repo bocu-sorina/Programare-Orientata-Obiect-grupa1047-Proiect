@@ -29,6 +29,15 @@ Electrocasnice::~Electrocasnice()
 {
 }
 
+double Electrocasnice::calculeazaPretDupaDiscount(double discount)
+{
+	cout << "Discount din electrocasnice" << endl;
+	pret -= pret * discount / 100 + 30;
+		return pret;
+		
+
+}
+
 ostream& operator<<(ostream& iesire, Electrocasnice e)
 {
 	iesire << "Electrocasnicul: ";

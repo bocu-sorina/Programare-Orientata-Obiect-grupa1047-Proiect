@@ -135,6 +135,14 @@ void Laptop::setMemorie(int mem_l)
 	this->mem_l = mem_l;
 }
 
+double Laptop::calculeazaPretDupaDiscount(double discount)
+{
+	cout << "Discount din laptop" << endl;
+	pret -= pret * discount / 100 + 50;
+	return pret;
+	
+}
+
 ostream& operator<<(ostream& out, Laptop l)
 {
 	out << "\t Laptop:" << endl;

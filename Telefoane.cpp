@@ -110,6 +110,14 @@ void Telefoane::setCamera(int camera)
     this->camera = camera;
 }
 
+double Telefoane::calculeazaPretDupaDiscount(double discount)
+{ 
+    cout << "Discount din telefoane" << endl;
+    pret -= pret * discount / 100 + 90;
+    return pret;
+   
+}
+
 ostream& operator<<(ostream& out, Telefoane tl)
 {
     out << "\t Telefonul:" << endl;

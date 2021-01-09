@@ -32,5 +32,6 @@ public:
     
     friend ostream& operator <<(ostream& out, Telefoane tl);
     //friend istream& operator>>(istream& ios, Telefoane& tl);
+    double calculeazaPretDupaDiscount(double discount);
 };
 

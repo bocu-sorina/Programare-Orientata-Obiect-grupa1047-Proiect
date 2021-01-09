@@ -22,6 +22,6 @@ public:
 
     friend ostream& operator <<(ostream& out, Electrocasnice e);
     //friend istream& operator>>(istream& ios, Electrocasnice& e);
-
+    double calculeazaPretDupaDiscount(double discount);
 };
 
